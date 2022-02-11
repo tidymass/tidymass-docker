@@ -16,13 +16,20 @@ Please refer this [document ](https://www.docker.com/) to install docker, and th
 Open you terminal and then type code below:
 
 ```
-docker pull jaspershen/tidymass-docker
+docker pull jaspershen/tidymass-docker:latest
 ```
 
 And then:
 
 ```
-docker run -e PASSWORD=tidymass -p 8787:8787 jaspershen/tidymass-docker
+docker run -e PASSWORD=tidymass -p 8787:8787 jaspershen/tidymass-docker::latest
+```
+
+The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.
+
+
+```
+docker run -e PASSWORD=tidymass -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/tidymass-docker
 ```
 
 ## Open the Rstudio server
@@ -53,6 +60,10 @@ docker build --tag tidymass-docker .
 
 ## Push the image.
 
+```
+docker image ls
+```
+
 In the terminal, login to the Docker Hub using the command docker 
 
 ```
@@ -70,14 +81,16 @@ then inputs your password.
 Use the `docker tag` command to give the `tidymass-docker` image a new name. 
 
 ```
-docker tag tidymass-docker jaspershen/tidymass-docker
+docker tag tidymass-docker jaspershen/tidymass-docker:tag
 ```
 
 Now try your push command.
 
 ```
-docker push jaspershen/tidymass-docker
+docker push jaspershen/tidymass-docker:tag
 ```
+
+`:tag` here can be the version of the image. 
 
 # Reference:
 

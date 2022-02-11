@@ -7,5 +7,11 @@ RUN apt-get update \
 
 RUN install2.r --error \
   --deps TRUE \
-  && R -e "BiocManager::install(c('Rdisop', 'xcms'))"
+  && R -e "BiocManager::install(c('Rdisop'))"
+  
+RUN apt-get update \
+  && installGithub.r \
+    omegahat/XMLSchema \
+    tidymass/masstools
+    
 
