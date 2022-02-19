@@ -1,4 +1,4 @@
-FROM yufree/xcms:latest
+FROM jaspershen/tidymass:latest
 MAINTAINER "Xiaotao Shen" shenxt1990@outlook.com
 
 RUN apt-get update && apt-get install -y curl
