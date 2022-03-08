@@ -10,7 +10,7 @@ The `tidymass` is the docker version of `tidymass`, all the packages in `tidymas
 
 ## Install `docker`
 
-Please refer this [document ](https://www.docker.com/) to install docker, and then run it.
+Please refer this [document](https://www.docker.com/) to install docker, and then run it.
 
 ## Pull the tidymass image.
 

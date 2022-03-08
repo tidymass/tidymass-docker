@@ -4,7 +4,7 @@
 
 2. Click the Create Repository button. 
 
-3. For the repo name, use the name same with your building, here is `tidymass`. Make sure the Visibility is `Public`.
+3. For the repo name, use the name same with your building, here is `tidymass-case-study`. Make sure the Visibility is `Public`.
 
 4. Click the `Create` button!
 
@@ -21,24 +21,24 @@
 Open the terminal, and run the code below to build image.
 
 ```
-docker build -t tidymass -f tidymass/Dockerfile .
+docker build -t tidymass-case-study -f tidymass-case-study/Dockerfile .
 ```
 
-`-t`: tag name, here is `tidymass`
+`-t`: tag name, here is `tidymass-case-study`
 
-`-f`: `Dockerfile` path. Here I put it in the sub folder named `tidymass`.
+`-f`: `Dockerfile` path. Here I put it in the sub folder named `tidymass-case-study`.
 
 Then check it in local.
 
 ```
-docker run -e PASSWORD=tidymass -p 8787:8787 tidymass
+docker run -e PASSWORD=tidymass -p 8787:8787 tidymass-case-study
 ```
 
 Open this in browser: http://localhost:8787
 
 # Push the image.
 
-1. First, let check if there is a image named as `tidymass` has been created.
+1. First, let check if there is a image named as `tidymass-case-study` has been created.
 
 ```
 docker image ls
@@ -52,16 +52,16 @@ docker login -u jaspershen
 
 3. Then input your password.
 
-4. Use the `docker tag` command to give the `tidymass` image a new name. 
+4. Use the `docker tag` command to give the `tidymass-case-study` image a new name. 
 
 ```
-docker tag tidymass jaspershen/tidymass:latest
+docker tag tidymass-case-study jaspershen/tidymass-case-study:latest
 ```
 
 5. Now try your push command.
 
 ```
-docker push jaspershen/tidymass:latest
+docker push jaspershen/tidymass-case-study:latest
 ```
 
 `:tag` here can be the version of the image. We set it as `:latest`.
